@@ -1,6 +1,6 @@
 ## Here is the list of data structure will be added in this repository
 
-[] Linked List
+- [] Linked List
 [] Stack
 [] Queues
 [] Tree
