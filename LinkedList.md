@@ -1,13 +1,13 @@
 ## Linked List Operations 
 
 
-- [ ] Insert at begin
-- [ ] Insert at end
-- [ ] Remove First Element
-- [ ] Remove Last Element
+- [x] Insert at begin
+- [x] Insert at end
+- [ ] Insert At Index
+- [x] Remove First Element
+- [x] Remove Last Element
+- [ ] Remove At Index
 - [ ] Search Element
-- [ ] Insert After Element
-- [ ] Insert Before Element
 - [ ] Remove First Occurence of Element
 - [ ] Remove Last Occurence of Element
 - [ ] Remove All Occurences of Element
