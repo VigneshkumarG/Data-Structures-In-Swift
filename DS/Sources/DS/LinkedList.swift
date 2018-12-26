@@ -5,14 +5,13 @@ protocol LinkedList {
     func insertAtEnd(_ element: Element)
     func insert(_ element: Element, atIndex index: Int)throws
     
-    func removeFirst()
-    func removeLast()
-    func remove(atIndex index: Int)
-    
-    var isEmpty: Bool { get }    
+    func removeFirst()throws -> Element
+    func removeLast()throws -> Element
+    func remove(atIndex index: Int)throws -> Element
 }
 
 
 enum LinkedListError: Error {
     case indexOutOfBound
+    case emptyList
 }

@@ -63,4 +63,8 @@ extension DoublyLinkedList: LinkedList
     func remove(atIndex index: Int) {
         
     }
+    
+    var isEmpty: Bool {
+        return head == nil
+    }
 }

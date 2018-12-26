@@ -9,89 +9,22 @@ import Foundation
 
 class SinglyLinkedList<Element> {
     
-    class Node<Element> {
+    class LinklistNode<Element> {
         
         var data: Element
         
-        var next: Node<Element>?
+        var next: LinklistNode<Element>?
         
-        init(data: Element, next: Node<Element>? = nil) {
+        init(data: Element, next: LinklistNode<Element>? = nil) {
             
             self.data = data
             self.next = next
         }
     }
     
-    private var head: Node<Element>? = nil
+    public typealias Node = LinklistNode<Element>
     
-    // Insert at Begin
-    
-//    func insertAtBegin(_ element: Element)  {
-//
-//        let newNode = Node(data: element)
-//
-//        if head == nil {
-//            head = newNode
-//        }else{
-//            newNode.next = head
-//            head = newNode
-//        }
-//    }
-//
-//    // Insert At End
-//
-//    func insertAtEnd(_ element: Element)  {
-//
-//        let newNode = Node(data: element)
-//
-//        if tail == nil {
-//            tail = newNode
-//            head = newNode
-//        }else {
-//            tail?.next = newNode
-//            tail = newNode
-//        }
-//    }
-//
-//    // Remove First Element
-//
-//    func removeFirst() -> Element? {
-//        if let head = head {
-//            self.head = head.next
-//            return head.data
-//        }
-//        return nil
-//    }
-//
-//    func removeLast() -> Element? {
-//
-//        // 0 element case
-//        if head == nil {
-//            return nil
-//        }
-//
-//        // 1 element case
-//
-//        if head?.next == nil, let head = head {
-//            self.head = nil
-//            self.tail = nil
-//            return head.data
-//        }
-//
-//        // more than 1 case
-//
-//        var currentNode = head
-//
-//        while currentNode?.next?.next != nil {
-//            currentNode = currentNode?.next
-//        }
-//
-//        let removeNode = currentNode?.next
-//        currentNode?.next = nil
-//        return removeNode?.data
-//    }
-    
- //    Print List
+    private var head: Node? = nil
 
     func printList()  {
 
@@ -113,7 +46,7 @@ class SinglyLinkedList<Element> {
 
 extension SinglyLinkedList: LinkedList
 {
-    private func insertAtHead(_ newNode: Node<Element>) -> Bool {
+    private func insertAtHead(_ newNode: Node) -> Bool {
         guard head != nil else {
             head = newNode
             return true
@@ -190,4 +123,20 @@ extension SinglyLinkedList: LinkedList
     func remove(atIndex index: Int) {
         
     }
+    
+    var isEmpty: Bool{
+        return head == nil
+    }
+    
+    var first: Node?  {
+        return head
+    }
+    
+    var last: Node? {
+        var temp = head
+        while temp?.next == nil {
+            temp = temp?.next
+        }
+        return temp
+    }        
 }
